@@ -1,1 +1,14 @@
+<!-- Create GET request -->
 GET /test/wedostuff.php?studName=name&studName2=surname&studAge=age&studID=id&studFacul=faculty
+
+<!-- Create POST request in JSON format -->
+POST /test/wedostuff.php HTTP/1.1
+Host: henloiamwebsite.com
+      
+{
+  "name": "Johnny",
+  "surname": "Cringe",
+  "age": 7,
+  "id": 78222,
+  "faculty": "it"
+}
