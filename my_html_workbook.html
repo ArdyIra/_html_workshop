@@ -2,40 +2,109 @@
 <!-- GET /test/wedostuff.php?studName=name&studName2=surname&studAge=age&studID=id&studFacul=faculty -->
 
 <!-- Create POST request in JSON format -->
-POST /test/wedostuff.php HTTP/1.1
-Host: henloiamwebsite.com
+<!-- POST /test/wedostuff.php HTTP/1.1
+Host: henloiamwebsite.com -->
       
-{
+<!-- {
   "name": "Johnny",
   "surname": "Cringe",
   "age": 7,
   "id": 7777777,
   "faculty": "it"
-}
+} -->
 
 <!-- Create <form> with GET and POST method -->
 
-  <!-- POST -->
+  <style>
+    div {
+      display: flex;
+      flex-wrap: wrap;
 
-  <form action="/wedostuff.php" method="post" target="_self" autocomplete="on" name="helloIAmAForm">
-    <label for="name">First name:</label><br>
-    <input type="text" id="fname" name="fname" value="Johnny"><br>
+    }
+    .parts {
+      width: 50%;
+    }
+    button {
+      height: 10%;
+    }
+  </style>
+  <div>
 
-    <label for="surname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" value="Cringe"><br><br>
+    <!-- POST -->
+    <div class ="parts">
+      
+        <form action="/wedostuff.php" method="post" target="_blank" autocomplete="on" name="helloIAmAForm">
+          <p>This form will be submitted using the POST method:</p>
+          <label for="name">First name:</label><br>
+          <input type="text" id="fname" name="fname" value=""><br><br>
 
-    <label for="age">Age:</label><br>
-    <input type="text" id="agen" name="age" value="7"><br><br>
+          <label for="surname">Last name:</label><br>
+          <input type="text" id="lname" name="lname" value=""><br><br>
 
-    <label for="id">ID:</label><br>
-    <input type="text" id="iden" name="id" value="7777777"><br><br>
+          <label for="age">Age:</label><br>
+          <input type="text" id="agen" name="age" value=""><br><br>
 
-    <label for="faculty">Faculty:</label><br>
-    <input type="text" id="faculty" name="faculty" value="it"><br><br>
+          <label for="id">ID:</label><br>
+          <input type="text" id="iden" name="id" value=""><br><br>
 
-    <input type="submit" value="Submit">
+          <label for="faculty">Faculty:</label><br>
+          <input type="text" id="faculty" name="faculty" value=""><br><br>
 
-  <!-- GET -->
+          <input type="submit" value="Submit">
+        </form>
+    </div>
 
-  
-  </form>
+    <!-- GET -->
+    <div class="parts">
+
+        <form action="/wedostuff.php" method="get" target="_blank" autocomplete="on" name="helloIAmAForm">
+          <p>This form will be submitted using the GET method:</p>
+          <label for="name">First name:</label><br>
+          <input type="text" id="fname" name="fname" value=""><br><br>
+
+          <label for="surname">Last name:</label><br>
+          <input type="text" id="lname" name="lname" value=""><br><br>
+
+          <label for="age">Age:</label><br>
+          <input type="text" id="agen" name="age" value=""><br><br>
+
+          <label for="id">ID:</label><br>
+          <input type="text" id="iden" name="id" value=""><br><br>
+
+          <label for="faculty">Faculty:</label><br>
+          <input type="text" id="faculty" name="faculty" value=""><br><br>
+
+          <input type="submit" value="Submit">
+        </form>
+    </div>
+  </div>
+
+  <div>
+    <div class="parts">
+      <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/dfsb-uyZLkc?autoplay=1&mute=1">
+      </iframe>
+    </div>
+
+    <div class="parts">
+      <p>Click the button to get your coordinates.</p>
+      <button onclick="getLocation()">Try It</button>
+      <p id="demo"></p>
+      <script>
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude;
+        }
+      </script>
+    </div>
+  </div>
